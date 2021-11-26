@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<color name="black">#000000</color>
+	<color name="background">#0A285F</color>
+	<color name="btn_accent">#D5A100</color>
+	<color name="btn_accent_pressed">#B38600</color>
+	<color name="btn_background">#0075BE</color>
+	<color name="btn_background_pressed">#005E99</color>
+	<color name="lbl_text">#FFCC00</color>
+	<color name="lbl_background">#FFCC00</color>
+	<color name="lbl_accent">#0075BE</color>
+	<color name="btn_select">#39E600</color>
+</resources>

@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/background"
+	android:gravity="center"
+	android:orientation="vertical"
+	tools:context=".Offense">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1"
+		android:gravity="center"
+		android:orientation="vertical"
+		tools:ignore="UseCompoundDrawables">
+
+		<TextView
+			android:id="@+id/q_name"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginBottom="32dp"
+			android:background="@drawable/ui_label"
+			android:paddingLeft="16dp"
+			android:paddingRight="16dp"
+			android:text="BUG"
+			android:textAllCaps="true"
+			android:textColor="@color/black"
+			android:textSize="64sp"
+			tools:ignore="HardcodedText" />
+
+		<ImageView
+			android:id="@+id/q_icon"
+			android:layout_width="195dp"
+			android:layout_height="195dp"
+			android:src="@drawable/type_bug" />
+	</LinearLayout>
+
+	<Button
+		android:id="@+id/check"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginHorizontal="64dp"
+		android:layout_marginBottom="32dp"
+		android:background="@drawable/ui_button"
+		android:text="CHECK"
+		android:textSize="24sp" />
+
+	<GridLayout
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_marginBottom="64dp"
+		android:columnCount="6"
+		android:rowCount="3">
+
+		<ImageView
+			android:id="@+id/bug"
+			android:tag="bug"
+			android:layout_width="48dp"
+			android:layout_height="48dp"
+			android:layout_margin="6dp"
+			android:background="@drawable/ui_button"
+			android:padding="4dp"
+			android:src="@drawable/type_bug" />
+
+		<ImageView
+			android:id="@+id/dark"
+			android:tag="dark"
+			android:layout_width="48dp"
+			android:layout_height="48dp"
+			android:layout_margin="6dp"
+			android:background="@drawable/ui_button"
+			android:padding="4dp"
+			android:src="@drawable/type_dark" />
+
+		<ImageView
+			android:id="@+id/dragon"
+			android:tag="dragon"
+			android:layout_width="48dp"
+			android:layout_height="48dp"
+			android:layout_margin="6dp"
+			android:background="@drawable/ui_button"
+			android:padding="4dp"
+			android:src="@drawable/type_dragon" />
+
+		<ImageView
+			android:id="@+id/electric"
+			android:tag="electric"
+			android:layout_width="48dp"
+			android:layout_height="48dp"
+			android:layout_margin="6dp"
+			android:background="@drawable/ui_button"
+			android:padding="4dp"
+			android:src="@drawable/type_electric" />
+
+		<ImageView
+			android:id="@+id/fairy"
+			android:tag="fairy"
+			android:layout_width="48dp"
+			android:layout_height="48dp"
+			android:layout_margin="6dp"
+			android:background="@drawable/ui_button"
+			android:padding="4dp"
+			android:src="@drawable/type_fairy" />
+
+		<ImageView
+			android:id="@+id/fighting"
+			android:tag="fighting"
+			android:layout_width="48dp"
+			android:layout_height="48dp"
+			android:layout_margin="6dp"
+			android:background="@drawable/ui_button"
+			android:padding="4dp"
+			android:src="@drawable/type_fighting" />
+
+		<ImageView
+			android:id="@+id/fire"
+			android:tag="fire"
+			android:layout_width="48dp"
+			android:layout_height="48dp"
+			android:layout_margin="6dp"
+			android:background="@drawable/ui_button"
+			android:padding="4dp"
+			android:src="@drawable/type_fire" />
+
+		<ImageView
+			android:id="@+id/flying"
+			android:tag="flying"
+			android:layout_width="48dp"
+			android:layout_height="48dp"
+			android:layout_margin="6dp"
+			android:background="@drawable/ui_button"
+			android:padding="4dp"
+			android:src="@drawable/type_flying" />
+
+		<ImageView
+			android:id="@+id/ghost"
+			android:tag="ghost"
+			android:layout_width="48dp"
+			android:layout_height="48dp"
+			android:layout_margin="6dp"
+			android:background="@drawable/ui_button"
+			android:padding="4dp"
+			android:src="@drawable/type_ghost" />
+
+		<ImageView
+			android:id="@+id/grass"
+			android:tag="grass"
+			android:layout_width="48dp"
+			android:layout_height="48dp"
+			android:layout_margin="6dp"
+			android:background="@drawable/ui_button"
+			android:padding="4dp"
+			android:src="@drawable/type_grass" />
+
+		<ImageView
+			android:id="@+id/ground"
+			android:tag="ground"
+			android:layout_width="48dp"
+			android:layout_height="48dp"
+			android:layout_margin="6dp"
+			android:background="@drawable/ui_button"
+			android:padding="4dp"
+			android:src="@drawable/type_ground" />
+
+		<ImageView
+			android:id="@+id/ice"
+			android:tag="ice"
+			android:layout_width="48dp"
+			android:layout_height="48dp"
+			android:layout_margin="6dp"
+			android:background="@drawable/ui_button"
+			android:padding="4dp"
+			android:src="@drawable/type_ice" />
+
+		<ImageView
+			android:id="@+id/normal"
+			android:tag="normal"
+			android:layout_width="48dp"
+			android:layout_height="48dp"
+			android:layout_margin="6dp"
+			android:background="@drawable/ui_button"
+			android:padding="4dp"
+			android:src="@drawable/type_normal" />
+
+		<ImageView
+			android:id="@+id/poison"
+			android:tag="poison"
+			android:layout_width="48dp"
+			android:layout_height="48dp"
+			android:layout_margin="6dp"
+			android:background="@drawable/ui_button"
+			android:padding="4dp"
+			android:src="@drawable/type_poison" />
+
+		<ImageView
+			android:id="@+id/psychic"
+			android:tag="psychic"
+			android:layout_width="48dp"
+			android:layout_height="48dp"
+			android:layout_margin="6dp"
+			android:background="@drawable/ui_button"
+			android:padding="4dp"
+			android:src="@drawable/type_psychic" />
+
+		<ImageView
+			android:id="@+id/rock"
+			android:tag="rock"
+			android:layout_width="48dp"
+			android:layout_height="48dp"
+			android:layout_margin="6dp"
+			android:background="@drawable/ui_button"
+			android:padding="4dp"
+			android:src="@drawable/type_rock" />
+
+		<ImageView
+			android:id="@+id/steel"
+			android:tag="steel"
+			android:layout_width="48dp"
+			android:layout_height="48dp"
+			android:layout_margin="6dp"
+			android:background="@drawable/ui_button"
+			android:padding="4dp"
+			android:src="@drawable/type_steel" />
+
+		<ImageView
+			android:id="@+id/water"
+			android:tag="water"
+			android:layout_width="48dp"
+			android:layout_height="48dp"
+			android:layout_margin="6dp"
+			android:background="@drawable/ui_button"
+			android:padding="4dp"
+			android:src="@drawable/type_water" />
+
+	</GridLayout>
+</LinearLayout>
