@@ -1,50 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
 	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:background="@color/background"
-	android:gravity="center"
-	android:orientation="vertical"
 	tools:context=".MainMenu">
 
-	<ImageView
-		android:layout_width="128dp"
-		android:layout_height="0dp"
-		android:layout_weight="1"
-		android:src="@drawable/ic_poke_ball" />
+	<androidx.fragment.app.FragmentContainerView
+		android:id="@+id/confirm_exit"
+		android:layout_width="wrap_content"
+		android:layout_height="wrap_content"
+		android:layout_centerInParent="true"/>
 
 	<LinearLayout
-		android:layout_width="wrap_content"
-		android:layout_height="0dp"
-		android:layout_weight="2"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
 		android:gravity="center_horizontal"
 		android:orientation="vertical">
 
-		<Button
-			android:id="@+id/offense"
+		<ImageView
+			android:layout_width="128dp"
+			android:layout_height="0dp"
+			android:layout_weight="1"
+			android:src="@drawable/ic_poke_ball" />
+
+		<LinearLayout
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
-			android:layout_margin="8dp"
-			android:background="@drawable/ui_button"
-			android:paddingLeft="12dp"
-			android:paddingRight="12dp"
-			android:text="Offense"
-			android:textSize="32sp"
-			tools:ignore="HardcodedText" />
+			android:layout_weight="2"
+			android:orientation="vertical"
+			android:gravity="center_horizontal">
+			<Button
+				android:id="@+id/offense"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_margin="8dp"
+				android:background="@drawable/ui_button"
+				android:paddingLeft="12dp"
+				android:paddingRight="12dp"
+				android:text="Offense"
+				android:textSize="32sp"
+				tools:ignore="HardcodedText" />
 
-		<Button
-			android:id="@+id/defense"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:layout_margin="8dp"
-			android:background="@drawable/ui_button"
-			android:paddingLeft="12dp"
-			android:paddingRight="12dp"
-			android:text="Defense"
-			android:textSize="32sp"
-			tools:ignore="HardcodedText" />
-
+			<Button
+				android:id="@+id/defense"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_margin="8dp"
+				android:background="@drawable/ui_button"
+				android:paddingLeft="12dp"
+				android:paddingRight="12dp"
+				android:text="Defense"
+				android:textSize="32sp"
+				tools:ignore="HardcodedText" />
+		</LinearLayout>
 	</LinearLayout>
-</LinearLayout>
+</RelativeLayout>

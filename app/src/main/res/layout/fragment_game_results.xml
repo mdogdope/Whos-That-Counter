@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:background="@color/black_dim">
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:layout_margin="48dp"
+		android:background="@drawable/ui_label"
+		android:gravity="center"
+		android:orientation="vertical">
+
+		<LinearLayout
+			android:id="@+id/gr_message"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_margin="8dp"
+			android:gravity="center"
+			android:orientation="vertical">
+
+			<TextView
+				android:id="@+id/gr_score"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Correct"
+				android:textAlignment="center"
+				android:textColor="@color/black"
+				android:textSize="64sp"
+				tools:ignore="HardcodedText" />
+
+			<TextView
+				android:id="@+id/gr_type"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="Bug"
+				android:textAlignment="center"
+				android:textColor="@color/black"
+				android:textSize="48sp"
+				tools:ignore="HardcodedText" />
+
+			<TextView
+				android:id="@+id/gr_type_relation"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:text="is weak to"
+				android:textAlignment="center"
+				android:textColor="@color/black"
+				android:textSize="32sp"
+				tools:ignore="HardcodedText" />
+
+			<LinearLayout
+				android:id="@+id/gr_counters"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:gravity="center"
+				android:orientation="vertical">
+
+			</LinearLayout>
+
+			<LinearLayout
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_margin="16dp"
+				android:orientation="horizontal">
+
+				<Button
+					android:id="@+id/gr_menu"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginEnd="8dp"
+					android:layout_weight="1"
+					android:background="@drawable/ui_button"
+					android:padding="16dp"
+					android:text="MENU"
+					android:textColor="@color/black"
+					android:textSize="24sp"
+					tools:ignore="HardcodedText" />
+
+				<Button
+					android:id="@+id/gr_again"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:layout_marginStart="8dp"
+					android:layout_weight="1"
+					android:background="@drawable/ui_button"
+					android:padding="16dp"
+					android:text="again"
+					android:textColor="@color/black"
+					android:textSize="24sp"
+					tools:ignore="HardcodedText" />
+			</LinearLayout>
+		</LinearLayout>
+
+	</LinearLayout>
+
+</FrameLayout>

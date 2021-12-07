@@ -1,23 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-	xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
+	android:layout_gravity="left"
 	android:background="@color/background"
 	android:orientation="vertical"
-	android:layout_gravity="left"
 	tools:context=".Offense">
 
 	<ImageButton
 		android:layout_width="90dp"
 		android:layout_height="64dp"
-		android:scaleType="centerCrop"
-		android:padding="16dp"
-		android:src="@drawable/ic_back_arrow"
-		android:background="@drawable/ui_button"
 		android:layout_margin="16dp"
+		android:background="@drawable/ui_button"
+		android:padding="16dp"
+		android:scaleType="centerCrop"
+		android:src="@drawable/ic_back_arrow"
 		tools:ignore="ContentDescription" />
 
 	<LinearLayout
@@ -25,6 +24,7 @@
 		android:layout_height="match_parent"
 		android:gravity="center"
 		android:orientation="vertical">
+
 		<LinearLayout
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
@@ -38,14 +38,16 @@
 				android:layout_height="195dp"
 				android:src="@drawable/type_bug"
 				tools:ignore="ContentDescription" />
+
 			<LinearLayout
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
-				android:orientation="vertical"
-				android:background="@drawable/ui_label"
 				android:layout_marginTop="16dp"
-				android:padding="8dp"
-				android:gravity="center">
+				android:background="@drawable/ui_label"
+				android:gravity="center"
+				android:orientation="vertical"
+				android:padding="8dp">
+
 				<TextView
 					android:id="@+id/q_name"
 					android:layout_width="wrap_content"
@@ -54,11 +56,12 @@
 					android:textColor="@color/black"
 					android:textSize="28sp"
 					tools:ignore="HardcodedText" />
+
 				<TextView
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
+					android:text="is weak to"
 					android:textColor="@color/black"
-					android:text="...is weak to..."
 					android:textSize="24sp"
 					tools:ignore="HardcodedText" />
 			</LinearLayout>
@@ -67,9 +70,10 @@
 		<LinearLayout
 			android:layout_width="match_parent"
 			android:layout_height="wrap_content"
-			android:orientation="vertical"
+			android:layout_marginTop="40dp"
 			android:gravity="center"
-			android:layout_marginTop="40dp">
+			android:orientation="vertical">
+
 			<GridLayout
 				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
@@ -77,205 +81,224 @@
 				android:columnCount="6"
 				android:rowCount="3">
 
-				<ImageView
+				<ImageButton
 					android:id="@+id/bug"
-					android:tag="bug"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="6dp"
 					android:background="@drawable/ui_button"
 					android:padding="4dp"
+					android:scaleType="fitCenter"
 					android:src="@drawable/type_bug"
+					android:tag="unpressed"
 					tools:ignore="ContentDescription" />
 
-				<ImageView
+				<ImageButton
 					android:id="@+id/dark"
-					android:tag="dark"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="6dp"
 					android:background="@drawable/ui_button"
 					android:padding="4dp"
+					android:scaleType="fitCenter"
 					android:src="@drawable/type_dark"
+					android:tag="unpressed"
 					tools:ignore="ContentDescription" />
 
-				<ImageView
+				<ImageButton
 					android:id="@+id/dragon"
-					android:tag="dragon"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="6dp"
 					android:background="@drawable/ui_button"
 					android:padding="4dp"
+					android:scaleType="fitCenter"
 					android:src="@drawable/type_dragon"
+					android:tag="unpressed"
 					tools:ignore="ContentDescription" />
 
-				<ImageView
+				<ImageButton
 					android:id="@+id/electric"
-					android:tag="electric"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="6dp"
 					android:background="@drawable/ui_button"
 					android:padding="4dp"
+					android:scaleType="fitCenter"
 					android:src="@drawable/type_electric"
+					android:tag="unpressed"
 					tools:ignore="ContentDescription" />
 
-				<ImageView
+				<ImageButton
 					android:id="@+id/fairy"
-					android:tag="fairy"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="6dp"
 					android:background="@drawable/ui_button"
 					android:padding="4dp"
+					android:scaleType="fitCenter"
 					android:src="@drawable/type_fairy"
+					android:tag="unpressed"
 					tools:ignore="ContentDescription" />
 
-				<ImageView
+				<ImageButton
 					android:id="@+id/fighting"
-					android:tag="fighting"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="6dp"
 					android:background="@drawable/ui_button"
 					android:padding="4dp"
+					android:scaleType="fitCenter"
 					android:src="@drawable/type_fighting"
+					android:tag="unpressed"
 					tools:ignore="ContentDescription" />
 
-				<ImageView
+				<ImageButton
 					android:id="@+id/fire"
-					android:tag="fire"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="6dp"
 					android:background="@drawable/ui_button"
 					android:padding="4dp"
+					android:scaleType="fitCenter"
 					android:src="@drawable/type_fire"
+					android:tag="unpressed"
 					tools:ignore="ContentDescription" />
 
-				<ImageView
+				<ImageButton
 					android:id="@+id/flying"
-					android:tag="flying"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="6dp"
 					android:background="@drawable/ui_button"
 					android:padding="4dp"
+					android:scaleType="fitCenter"
 					android:src="@drawable/type_flying"
+					android:tag="unpressed"
 					tools:ignore="ContentDescription" />
 
-				<ImageView
+				<ImageButton
 					android:id="@+id/ghost"
-					android:tag="ghost"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="6dp"
 					android:background="@drawable/ui_button"
 					android:padding="4dp"
+					android:scaleType="fitCenter"
 					android:src="@drawable/type_ghost"
+					android:tag="unpressed"
 					tools:ignore="ContentDescription" />
 
-				<ImageView
+				<ImageButton
 					android:id="@+id/grass"
-					android:tag="grass"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="6dp"
 					android:background="@drawable/ui_button"
 					android:padding="4dp"
+					android:scaleType="fitCenter"
 					android:src="@drawable/type_grass"
+					android:tag="unpressed"
 					tools:ignore="ContentDescription" />
 
-				<ImageView
+				<ImageButton
 					android:id="@+id/ground"
-					android:tag="ground"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="6dp"
 					android:background="@drawable/ui_button"
 					android:padding="4dp"
+					android:scaleType="fitCenter"
 					android:src="@drawable/type_ground"
+					android:tag="unpressed"
 					tools:ignore="ContentDescription" />
 
-				<ImageView
+				<ImageButton
 					android:id="@+id/ice"
-					android:tag="ice"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="6dp"
 					android:background="@drawable/ui_button"
 					android:padding="4dp"
+					android:scaleType="fitCenter"
 					android:src="@drawable/type_ice"
+					android:tag="unpressed"
 					tools:ignore="ContentDescription" />
 
-				<ImageView
+				<ImageButton
 					android:id="@+id/normal"
-					android:tag="normal"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="6dp"
 					android:background="@drawable/ui_button"
 					android:padding="4dp"
+					android:scaleType="fitCenter"
 					android:src="@drawable/type_normal"
+					android:tag="unpressed"
 					tools:ignore="ContentDescription" />
 
-				<ImageView
+				<ImageButton
 					android:id="@+id/poison"
-					android:tag="poison"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="6dp"
 					android:background="@drawable/ui_button"
 					android:padding="4dp"
+					android:scaleType="fitCenter"
 					android:src="@drawable/type_poison"
+					android:tag="unpressed"
 					tools:ignore="ContentDescription" />
 
-				<ImageView
+				<ImageButton
 					android:id="@+id/psychic"
-					android:tag="psychic"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="6dp"
 					android:background="@drawable/ui_button"
 					android:padding="4dp"
+					android:scaleType="fitCenter"
 					android:src="@drawable/type_psychic"
+					android:tag="unpressed"
 					tools:ignore="ContentDescription" />
 
-				<ImageView
+				<ImageButton
 					android:id="@+id/rock"
-					android:tag="rock"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="6dp"
 					android:background="@drawable/ui_button"
 					android:padding="4dp"
+					android:scaleType="fitCenter"
 					android:src="@drawable/type_rock"
+					android:tag="unpressed"
 					tools:ignore="ContentDescription" />
 
-				<ImageView
+				<ImageButton
 					android:id="@+id/steel"
-					android:tag="steel"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="6dp"
 					android:background="@drawable/ui_button"
 					android:padding="4dp"
+					android:scaleType="fitCenter"
 					android:src="@drawable/type_steel"
+					android:tag="unpressed"
 					tools:ignore="ContentDescription" />
 
-				<ImageView
+				<ImageButton
 					android:id="@+id/water"
-					android:tag="water"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="6dp"
 					android:background="@drawable/ui_button"
 					android:padding="4dp"
+					android:scaleType="fitCenter"
 					android:src="@drawable/type_water"
+					android:tag="unpressed"
 					tools:ignore="ContentDescription" />
 
 			</GridLayout>
+
 			<Button
 				android:id="@+id/check"
 				android:layout_width="match_parent"

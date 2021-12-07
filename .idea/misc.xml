@@ -7,9 +7,12 @@
         <entry key="..\:/Users/ekimh/Documents/~My_Projects/Coding_Projects/AndroidProjects/WhosThatCounter/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.18162393162393162" />
         <entry key="..\:/Users/ekimh/Documents/~My_Projects/Coding_Projects/AndroidProjects/WhosThatCounter/app/src/main/res/drawable/ui_button.xml" value="0.20625" />
         <entry key="..\:/Users/ekimh/Documents/~My_Projects/Coding_Projects/AndroidProjects/WhosThatCounter/app/src/main/res/drawable/ui_button_selected.xml" value="0.22135416666666666" />
-        <entry key="..\:/Users/ekimh/Documents/~My_Projects/Coding_Projects/AndroidProjects/WhosThatCounter/app/src/main/res/layout/activity_main_menu.xml" value="0.2520833333333333" />
+        <entry key="..\:/Users/ekimh/Documents/~My_Projects/Coding_Projects/AndroidProjects/WhosThatCounter/app/src/main/res/layout/activity_main_menu.xml" value="0.30085470085470084" />
         <entry key="..\:/Users/ekimh/Documents/~My_Projects/Coding_Projects/AndroidProjects/WhosThatCounter/app/src/main/res/layout/activity_offense.xml" value="0.30085470085470084" />
         <entry key="..\:/Users/ekimh/Documents/~My_Projects/Coding_Projects/AndroidProjects/WhosThatCounter/app/src/main/res/layout/activity_splash_screen.xml" value="0.20520833333333333" />
+        <entry key="..\:/Users/ekimh/Documents/~My_Projects/Coding_Projects/AndroidProjects/WhosThatCounter/app/src/main/res/layout/fragment_confim_exit.xml" value="0.28931623931623934" />
+        <entry key="..\:/Users/ekimh/Documents/~My_Projects/Coding_Projects/AndroidProjects/WhosThatCounter/app/src/main/res/layout/fragment_confirm_exit.xml" value="0.30085470085470084" />
+        <entry key="..\:/Users/ekimh/Documents/~My_Projects/Coding_Projects/AndroidProjects/WhosThatCounter/app/src/main/res/layout/fragment_game_results.xml" value="0.1" />
       </map>
     </option>
   </component>
