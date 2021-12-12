@@ -9,7 +9,6 @@
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:layout_gravity="center"
-		android:layout_margin="48dp"
 		android:background="@drawable/ui_label"
 		android:gravity="center"
 		android:orientation="vertical">
@@ -57,7 +56,11 @@
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:gravity="center"
-				android:orientation="vertical">
+				android:orientation="vertical"
+				android:background="@drawable/ui_sub_label"
+				android:layout_marginLeft="8dp"
+				android:layout_marginRight="8dp"
+				android:padding="8dp">
 
 			</LinearLayout>
 
@@ -67,18 +70,15 @@
 				android:layout_margin="16dp"
 				android:orientation="horizontal">
 
-				<Button
+				<ImageButton
 					android:id="@+id/gr_menu"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:layout_marginEnd="8dp"
-					android:layout_weight="1"
 					android:background="@drawable/ui_button"
 					android:padding="16dp"
-					android:text="MENU"
-					android:textColor="@color/black"
-					android:textSize="24sp"
-					tools:ignore="HardcodedText" />
+					android:src="@drawable/ic_baseline_home_24"
+					tools:ignore="ButtonStyle,HardcodedText" />
 
 				<Button
 					android:id="@+id/gr_again"
@@ -90,8 +90,8 @@
 					android:padding="16dp"
 					android:text="again"
 					android:textColor="@color/black"
-					android:textSize="24sp"
-					tools:ignore="HardcodedText" />
+					android:textSize="20sp"
+					tools:ignore="ButtonStyle,HardcodedText" />
 			</LinearLayout>
 		</LinearLayout>
 

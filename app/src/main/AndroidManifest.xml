@@ -7,7 +7,9 @@
 		android:icon="@mipmap/icon"
 		android:label="@string/app_name"
 		android:roundIcon="@mipmap/icon_round"
-		android:supportsRtl="true">
+		android:supportsRtl="true"
+		android:theme="@style/Theme.AppCompat.Light.NoActionBar"
+		android:fullBackupContent="true">
 		<!--
 		All <activity> tag's need to have the theme attribute. (Copy below)
 		==========================================================
@@ -17,7 +19,7 @@
 		<activity
 			android:name=".SplashScreen"
 			android:exported="true"
-			android:theme="@style/Theme.AppCompat.NoActionBar">
+			android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 			<intent-filter>
 				<action android:name="android.intent.action.MAIN" />
 				<category android:name="android.intent.category.LAUNCHER" />
@@ -26,11 +28,11 @@
 		<activity
 			android:name=".Offense"
 			android:exported="false"
-			android:theme="@style/Theme.AppCompat.NoActionBar"/>
+			android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
 		<activity
 			android:name=".MainMenu"
 			android:exported="false"
-			android:theme="@style/Theme.AppCompat.NoActionBar"/>
+			android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
 	</application>
 
 </manifest>

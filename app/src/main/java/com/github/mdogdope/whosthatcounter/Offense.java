@@ -6,7 +6,9 @@ import android.app.Dialog;
 import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -28,7 +30,11 @@ public class Offense extends AppCompatActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_offense);
-
+		
+		setupGame();
+	}
+	
+	private void setupGame(){
 		Counters question = new Counters(setQuestion());
 
 		Vector<ImageButton> typeButtons = new Vector<>();
@@ -38,10 +44,16 @@ public class Offense extends AppCompatActivity {
 			temp.setOnClickListener(new View.OnClickListener() {
 				@Override
 				public void onClick(View view) {
-					
+
 					buttonClick(view);
 				}
 			});
+			
+			if(temp.getTag().equals("pressed")){
+				temp.setTag("unpressed");
+				temp.setBackgroundResource(R.drawable.ui_button);
+			}
+			
 			typeButtons.add(temp);
 		}
 
@@ -49,14 +61,20 @@ public class Offense extends AppCompatActivity {
 		check.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				
+
 				Vector<Boolean> ans = getAns(typeButtons);
-				
+
 				check(question, ans);
 			}
 		});
 		
-		
+		ImageButton back = findViewById(R.id.offense_back);
+		back.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				finish();
+			}
+		});
 	}
 	
 	private Vector<Boolean> getAns(Vector<ImageButton> btns){
@@ -81,7 +99,7 @@ public class Offense extends AppCompatActivity {
 		}
 	}
 
-	private String setQuestion(){
+	private int setQuestion(){
 		TextView questionText = findViewById(R.id.q_name);
 		ImageView questionIcon = findViewById(R.id.q_icon);
 
@@ -91,7 +109,7 @@ public class Offense extends AppCompatActivity {
 		String name = types[qNum];
 		questionText.setText(capitalize(name));
 		questionIcon.setImageResource(typeImages[qNum]);
-		return name;
+		return qNum;
 	}
 	
 	private String capitalize(String s){
@@ -100,7 +118,7 @@ public class Offense extends AppCompatActivity {
 	}
 	
 	private void check(Counters q, Vector<Boolean> ans){
-		Vector<Boolean> correct = q.getWeak();
+		Vector<Boolean> correct = q.getWeakList();
 		boolean wrong = false;
 		for(int i=0; i < correct.toArray().length; i++){
 			if(correct.elementAt(i) != ans.elementAt(i)){
@@ -122,7 +140,7 @@ public class Offense extends AppCompatActivity {
 		TextView question = resultsDialog.findViewById(R.id.gr_type);
 		LinearLayout ans = resultsDialog.findViewById(R.id.gr_counters);
 		
-		Button menu = resultsDialog.findViewById(R.id.gr_menu);
+		ImageButton menu = resultsDialog.findViewById(R.id.gr_menu);
 		Button again = resultsDialog.findViewById(R.id.gr_again);
 
 		if(wrong){
@@ -131,14 +149,15 @@ public class Offense extends AppCompatActivity {
 			score.setText("Correct");
 		}
 		
-		question.setText(capitalize(q.getType()));
+		question.setText(capitalize(q.getTypeString()));
 		
 		for(int i = 0; i < correct.size(); i++){
 			if(correct.elementAt(i)){
 				TextView temp = new TextView(this);
 				temp.setText(types[i]);
 				temp.setTextColor(Color.parseColor("#000000"));
-				temp.setTextSize(16);
+				temp.setTextSize(20);
+				temp.setGravity(Gravity.CENTER);
 				ans.addView(temp);
 			}
 		}
@@ -153,11 +172,12 @@ public class Offense extends AppCompatActivity {
 		again.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				finish();
-				startActivity(getIntent());
+				resultsDialog.hide();
+				setupGame();
 			}
 		});
 		
+		resultsDialog.show();
 	}
 
 }
