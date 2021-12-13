@@ -19,7 +19,8 @@
 			android:layout_height="wrap_content"
 			android:layout_margin="8dp"
 			android:gravity="center"
-			android:orientation="vertical">
+			android:orientation="vertical"
+			tools:ignore="UselessParent">
 
 			<TextView
 				android:id="@+id/gr_score"

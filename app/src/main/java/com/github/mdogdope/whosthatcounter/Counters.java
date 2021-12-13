@@ -68,16 +68,16 @@ public class Counters {
 		return types[this.type];
 	}
 	
-	public Vector<Boolean> getWeakList(){
-		Vector<Boolean> ret = new Vector<>();
+	public Vector<Integer> getWeakList(){
+		Vector<Integer> ret = new Vector<>();
 		
 		int id = this.type;
+		int counter = 0;
 		for(int ia = 0; ia < counters.length; ia++){
 			if(counters[ia][id] > 0){
-				ret.add(true);
-			}else{
-				ret.add(false);
+				ret.add(counter);
 			}
+			counter++;
 		}
 		return ret;
 	}

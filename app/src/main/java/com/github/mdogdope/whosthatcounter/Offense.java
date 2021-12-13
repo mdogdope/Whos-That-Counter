@@ -3,12 +3,10 @@ package com.github.mdogdope.whosthatcounter;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
-import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -20,11 +18,11 @@ import java.util.Random;
 import java.util.Vector;
 
 public class Offense extends AppCompatActivity {
-
+	
 	private final String[] types = {"bug","dark","dragon","electric","fairy","fighting","fire","flying","ghost","grass","ground","ice","normal","poison","psychic","rock","steel","water"};
 	private final int[] typeImages = {R.drawable.type_bug, R.drawable.type_dark, R.drawable.type_dragon, R.drawable.type_electric, R.drawable.type_fairy, R.drawable.type_fighting, R.drawable.type_fire, R.drawable.type_flying, R.drawable.type_ghost, R.drawable.type_grass, R.drawable.type_ground, R.drawable.type_ice, R.drawable.type_normal, R.drawable.type_poison, R.drawable.type_psychic, R.drawable.type_rock, R.drawable.type_steel, R.drawable.type_water};
 
-	private final Integer[] ids = {R.id.bug, R.id.dark, R.id.dragon, R.id.electric, R.id.fairy, R.id.fighting, R.id.fire, R.id.flying, R.id.ghost, R.id.grass, R.id.ground, R.id.ice, R.id.normal, R.id.poison, R.id.psychic, R.id.rock, R.id.steel, R.id.water};
+	private final Integer[] ids = {R.id.o_bug, R.id.o_dark, R.id.o_dragon, R.id.o_electric, R.id.o_fairy, R.id.o_fighting, R.id.o_fire, R.id.o_flying, R.id.o_ghost, R.id.o_grass, R.id.o_ground, R.id.o_ice, R.id.o_normal, R.id.o_poison, R.id.o_psychic, R.id.o_rock, R.id.o_steel, R.id.o_water};
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -57,18 +55,19 @@ public class Offense extends AppCompatActivity {
 			typeButtons.add(temp);
 		}
 
-		Button check = findViewById(R.id.check);
+		Button check = findViewById(R.id.o_check);
 		check.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-
-				Vector<Boolean> ans = getAns(typeButtons);
-
-				check(question, ans);
+				
+				Vector<Integer> correct = question.getWeakList();
+				Vector<Integer> ans = getAns(typeButtons);
+				
+				showResults(question, ans, correct);
 			}
 		});
 		
-		ImageButton back = findViewById(R.id.offense_back);
+		ImageButton back = findViewById(R.id.o_back);
 		back.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
@@ -77,14 +76,14 @@ public class Offense extends AppCompatActivity {
 		});
 	}
 	
-	private Vector<Boolean> getAns(Vector<ImageButton> btns){
-		Vector<Boolean> ans = new Vector<Boolean>();
+	private Vector<Integer> getAns(Vector<ImageButton> btns){
+		Vector<Integer> ans = new Vector<>();
+		int counter = 0;
 		for(ImageButton btn : btns){
 			if(btn.getTag().equals("pressed")){
-				ans.add(true);
-			}else{
-				ans.add(false);
+				ans.add(counter);
 			}
+			counter++;
 		}
 		return ans;
 	}
@@ -100,8 +99,8 @@ public class Offense extends AppCompatActivity {
 	}
 
 	private int setQuestion(){
-		TextView questionText = findViewById(R.id.q_name);
-		ImageView questionIcon = findViewById(R.id.q_icon);
+		TextView questionText = findViewById(R.id.o_name);
+		ImageView questionIcon = findViewById(R.id.o_icon);
 
 		Random randInt = new Random();
 		int qNum = randInt.nextInt(types.length);
@@ -117,19 +116,9 @@ public class Offense extends AppCompatActivity {
 		return s.substring(0,1).toUpperCase() + s.substring(1);
 	}
 	
-	private void check(Counters q, Vector<Boolean> ans){
-		Vector<Boolean> correct = q.getWeakList();
-		boolean wrong = false;
-		for(int i=0; i < correct.toArray().length; i++){
-			if(correct.elementAt(i) != ans.elementAt(i)){
-				wrong = true;
-				break;
-			}
-		}
-		showResults(q, wrong, correct);
-	}
 	
-	private void showResults(Counters q, boolean wrong, Vector<Boolean> correct){
+	
+	private void showResults(Counters q, Vector<Integer> answers, Vector<Integer> correct){
 		final Dialog resultsDialog = new Dialog(Offense.this);
 		
 		resultsDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -142,29 +131,40 @@ public class Offense extends AppCompatActivity {
 		
 		ImageButton menu = resultsDialog.findViewById(R.id.gr_menu);
 		Button again = resultsDialog.findViewById(R.id.gr_again);
-
-		if(wrong){
-			score.setText("Wrong");
-		}else {
-			score.setText("Correct");
-		}
 		
 		question.setText(capitalize(q.getTypeString()));
 		
-		for(int i = 0; i < correct.size(); i++){
-			if(correct.elementAt(i)){
-				TextView temp = new TextView(this);
-				temp.setText(types[i]);
-				temp.setTextColor(Color.parseColor("#000000"));
-				temp.setTextSize(20);
-				temp.setGravity(Gravity.CENTER);
-				ans.addView(temp);
+		boolean good = false;
+		boolean bad = false;
+		
+		for(int c : correct){
+			TextView temp = new TextView(this);
+			if(answers.contains(c)){
+				good = true;
+				temp.setBackgroundColor(Color.parseColor("#5500FF00"));
+			}else{
+				bad = true;
+				temp.setBackgroundColor(Color.parseColor("#55FF0000"));
 			}
+			temp.setText(types[c]);
+			temp.setTextColor(Color.parseColor("#000000"));
+			temp.setTextSize(20);
+			temp.setGravity(Gravity.CENTER);
+			ans.addView(temp);
+		}
+
+		if(good && bad){
+			score.setText("Almost");
+		}else if(good){
+			score.setText("Correct");
+		}else{
+			score.setText("Wrong");
 		}
 		
 		menu.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
+				resultsDialog.hide();
 				finish();
 			}
 		});

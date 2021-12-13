@@ -12,5 +12,5 @@
 	<color name="lbl_accent">#0075BE</color>
 	<color name="btn_select">#FF0000</color>
 	<color name="light_red">#FF4D4D</color>
-	<color name="light_green">#99FF66</color>
+	<color name="light_grey">#DFDFDF</color>
 </resources>

@@ -3,13 +3,11 @@ package com.github.mdogdope.whosthatcounter;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
-import android.widget.FrameLayout;
 
 public class MainMenu extends AppCompatActivity {
 
@@ -22,7 +20,7 @@ public class MainMenu extends AppCompatActivity {
 		offense.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				Intent intent = new Intent(MainMenu.this,Offense.class);
+				Intent intent = new Intent(MainMenu.this, Offense.class);
 				startActivity(intent);
 			}
 		});
