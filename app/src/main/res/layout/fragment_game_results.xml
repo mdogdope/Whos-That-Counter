@@ -2,8 +2,7 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
-	android:layout_height="match_parent"
-	android:background="@color/black_dim">
+	android:layout_height="match_parent">
 
 	<LinearLayout
 		android:layout_width="match_parent"
@@ -12,7 +11,7 @@
 		android:background="@drawable/ui_label"
 		android:gravity="center"
 		android:orientation="vertical"
-		android:padding="16dp">
+		android:layout_margin="32dp">
 
 		<LinearLayout
 			android:id="@+id/gr_message"
@@ -79,17 +78,17 @@
 					android:background="@drawable/ui_button"
 					android:padding="16dp"
 					android:src="@drawable/ic_baseline_home_24"
-					tools:ignore="ButtonStyle,HardcodedText" />
+					tools:ignore="ButtonStyle,ContentDescription,HardcodedText" />
 
 				<Button
 					android:id="@+id/gr_again"
-					android:layout_width="wrap_content"
+					android:layout_width="0dp"
 					android:layout_height="wrap_content"
 					android:layout_marginStart="8dp"
 					android:layout_weight="1"
 					android:background="@drawable/ui_button"
 					android:padding="16dp"
-					android:text="again"
+					android:text="AGAIN"
 					android:textColor="@color/black"
 					android:textSize="20sp"
 					tools:ignore="ButtonStyle,HardcodedText" />

@@ -8,7 +8,7 @@
 	android:background="@color/background"
 	android:orientation="vertical"
 	tools:context=".Offense">
-
+	
 	<ImageButton
 		android:id="@+id/o_back"
 		android:layout_width="90dp"

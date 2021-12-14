@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Gravity;
@@ -77,6 +78,7 @@ public class Offense extends AppCompatActivity {
 				finish();
 			}
 		});
+		
 	}
 	
 	private Vector<Integer> getAns(Vector<ImageButton> btns){
@@ -135,11 +137,11 @@ public class Offense extends AppCompatActivity {
 	
 	
 	private void showResults(Counters q, Vector<Integer> answers, Vector<Integer> correct){
-		final Dialog resultsDialog = new Dialog(Offense.this);
-		
-		resultsDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+		final Dialog resultsDialog = new Dialog(Offense.this, android.R.style.Theme_Black_NoTitleBar);
+		resultsDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.argb(119,0,0,0)));
 		resultsDialog.setCancelable(true);
 		resultsDialog.setContentView(R.layout.fragment_game_results);
+		
 		
 		TextView score = resultsDialog.findViewById(R.id.gr_score);
 		TextView question = resultsDialog.findViewById(R.id.gr_type);
