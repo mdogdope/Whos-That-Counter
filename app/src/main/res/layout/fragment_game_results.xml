@@ -11,7 +11,8 @@
 		android:layout_gravity="center"
 		android:background="@drawable/ui_label"
 		android:gravity="center"
-		android:orientation="vertical">
+		android:orientation="vertical"
+		android:padding="16dp">
 
 		<LinearLayout
 			android:id="@+id/gr_message"
@@ -24,17 +25,16 @@
 
 			<TextView
 				android:id="@+id/gr_score"
-				android:layout_width="match_parent"
+				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="Correct"
-				android:textAlignment="center"
 				android:textColor="@color/black"
 				android:textSize="64sp"
 				tools:ignore="HardcodedText" />
 
 			<TextView
 				android:id="@+id/gr_type"
-				android:layout_width="match_parent"
+				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="Bug"
 				android:textAlignment="center"
@@ -44,7 +44,7 @@
 
 			<TextView
 				android:id="@+id/gr_type_relation"
-				android:layout_width="match_parent"
+				android:layout_width="wrap_content"
 				android:layout_height="wrap_content"
 				android:text="is weak to"
 				android:textAlignment="center"
@@ -56,11 +56,11 @@
 				android:id="@+id/gr_counters"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
-				android:gravity="center"
-				android:orientation="vertical"
-				android:background="@drawable/ui_sub_label"
 				android:layout_marginLeft="8dp"
 				android:layout_marginRight="8dp"
+				android:background="@drawable/ui_sub_label"
+				android:gravity="center"
+				android:orientation="vertical"
 				android:padding="8dp">
 
 			</LinearLayout>

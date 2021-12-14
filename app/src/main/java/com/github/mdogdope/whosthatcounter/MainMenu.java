@@ -16,12 +16,21 @@ public class MainMenu extends AppCompatActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main_menu);
 
-		Button offense = findViewById(R.id.offense);
+		Button offense = findViewById(R.id.mm_offense);
 		offense.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
 				Intent intent = new Intent(MainMenu.this, Offense.class);
 				startActivity(intent);
+			}
+		});
+		
+		Button defense = findViewById(R.id.mm_defense);
+		defense.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View view) {
+				Intent i = new Intent(MainMenu.this, Defense.class);
+				startActivity(i);
 			}
 		});
 	}

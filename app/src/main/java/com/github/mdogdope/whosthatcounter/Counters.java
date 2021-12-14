@@ -81,4 +81,18 @@ public class Counters {
 		}
 		return ret;
 	}
+	
+	public Vector<Integer> getStringList(){
+		Vector<Integer> ret = new Vector<>();
+
+		int ia = this.type;
+		int counter = 0;
+		for(int id = 0; id < counters.length; id++){
+			if(counters[ia][id] < 0){
+				ret.add(counter);
+			}
+			counter++;
+		}
+		return ret;
+	}
 }

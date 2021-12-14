@@ -1,0 +1,316 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	android:layout_gravity="left"
+	android:background="@color/background"
+	android:orientation="vertical"
+	tools:context=".Defense">
+	
+	<ImageButton
+		android:id="@+id/d_back"
+		android:layout_width="90dp"
+		android:layout_height="64dp"
+		android:layout_margin="16dp"
+		android:background="@drawable/ui_button"
+		android:padding="16dp"
+		android:scaleType="centerCrop"
+		android:src="@drawable/ic_back_arrow"
+		tools:ignore="ContentDescription" />
+
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="match_parent"
+		android:gravity="center"
+		android:orientation="vertical">
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:gravity="center"
+			android:orientation="vertical"
+			tools:ignore="UseCompoundDrawables">
+
+			<ImageView
+				android:id="@+id/d_icon"
+				android:layout_width="195dp"
+				android:layout_height="195dp"
+				android:src="@drawable/type_bug"
+				tools:ignore="ContentDescription" />
+
+			<LinearLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginTop="16dp"
+				android:background="@drawable/ui_label"
+				android:gravity="center"
+				android:orientation="vertical"
+				android:padding="8dp">
+
+				<TextView
+					android:id="@+id/d_name"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="BUG"
+					android:textColor="@color/black"
+					android:textSize="28sp"
+					tools:ignore="HardcodedText" />
+
+				<TextView
+					android:id="@+id/d_mode"
+					android:layout_width="wrap_content"
+					android:layout_height="wrap_content"
+					android:text="is resistant to"
+					android:textColor="@color/black"
+					android:textSize="24sp"
+					tools:ignore="HardcodedText" />
+			</LinearLayout>
+		</LinearLayout>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:layout_marginTop="40dp"
+			android:gravity="center"
+			android:orientation="vertical">
+
+			<GridLayout
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+				android:layout_marginBottom="16dp"
+				android:columnCount="6"
+				android:rowCount="3">
+
+				<ImageButton
+					android:id="@+id/d_bug"
+					android:layout_width="48dp"
+					android:layout_height="48dp"
+					android:layout_margin="6dp"
+					android:background="@drawable/ui_button"
+					android:padding="4dp"
+					android:scaleType="fitCenter"
+					android:src="@drawable/type_bug"
+					android:tag="unpressed"
+					tools:ignore="ContentDescription" />
+
+				<ImageButton
+					android:id="@+id/d_dark"
+					android:layout_width="48dp"
+					android:layout_height="48dp"
+					android:layout_margin="6dp"
+					android:background="@drawable/ui_button"
+					android:padding="4dp"
+					android:scaleType="fitCenter"
+					android:src="@drawable/type_dark"
+					android:tag="unpressed"
+					tools:ignore="ContentDescription" />
+
+				<ImageButton
+					android:id="@+id/d_dragon"
+					android:layout_width="48dp"
+					android:layout_height="48dp"
+					android:layout_margin="6dp"
+					android:background="@drawable/ui_button"
+					android:padding="4dp"
+					android:scaleType="fitCenter"
+					android:src="@drawable/type_dragon"
+					android:tag="unpressed"
+					tools:ignore="ContentDescription" />
+
+				<ImageButton
+					android:id="@+id/d_electric"
+					android:layout_width="48dp"
+					android:layout_height="48dp"
+					android:layout_margin="6dp"
+					android:background="@drawable/ui_button"
+					android:padding="4dp"
+					android:scaleType="fitCenter"
+					android:src="@drawable/type_electric"
+					android:tag="unpressed"
+					tools:ignore="ContentDescription" />
+
+				<ImageButton
+					android:id="@+id/d_fairy"
+					android:layout_width="48dp"
+					android:layout_height="48dp"
+					android:layout_margin="6dp"
+					android:background="@drawable/ui_button"
+					android:padding="4dp"
+					android:scaleType="fitCenter"
+					android:src="@drawable/type_fairy"
+					android:tag="unpressed"
+					tools:ignore="ContentDescription" />
+
+				<ImageButton
+					android:id="@+id/d_fighting"
+					android:layout_width="48dp"
+					android:layout_height="48dp"
+					android:layout_margin="6dp"
+					android:background="@drawable/ui_button"
+					android:padding="4dp"
+					android:scaleType="fitCenter"
+					android:src="@drawable/type_fighting"
+					android:tag="unpressed"
+					tools:ignore="ContentDescription" />
+
+				<ImageButton
+					android:id="@+id/d_fire"
+					android:layout_width="48dp"
+					android:layout_height="48dp"
+					android:layout_margin="6dp"
+					android:background="@drawable/ui_button"
+					android:padding="4dp"
+					android:scaleType="fitCenter"
+					android:src="@drawable/type_fire"
+					android:tag="unpressed"
+					tools:ignore="ContentDescription" />
+
+				<ImageButton
+					android:id="@+id/d_flying"
+					android:layout_width="48dp"
+					android:layout_height="48dp"
+					android:layout_margin="6dp"
+					android:background="@drawable/ui_button"
+					android:padding="4dp"
+					android:scaleType="fitCenter"
+					android:src="@drawable/type_flying"
+					android:tag="unpressed"
+					tools:ignore="ContentDescription" />
+
+				<ImageButton
+					android:id="@+id/d_ghost"
+					android:layout_width="48dp"
+					android:layout_height="48dp"
+					android:layout_margin="6dp"
+					android:background="@drawable/ui_button"
+					android:padding="4dp"
+					android:scaleType="fitCenter"
+					android:src="@drawable/type_ghost"
+					android:tag="unpressed"
+					tools:ignore="ContentDescription" />
+
+				<ImageButton
+					android:id="@+id/d_grass"
+					android:layout_width="48dp"
+					android:layout_height="48dp"
+					android:layout_margin="6dp"
+					android:background="@drawable/ui_button"
+					android:padding="4dp"
+					android:scaleType="fitCenter"
+					android:src="@drawable/type_grass"
+					android:tag="unpressed"
+					tools:ignore="ContentDescription" />
+
+				<ImageButton
+					android:id="@+id/d_ground"
+					android:layout_width="48dp"
+					android:layout_height="48dp"
+					android:layout_margin="6dp"
+					android:background="@drawable/ui_button"
+					android:padding="4dp"
+					android:scaleType="fitCenter"
+					android:src="@drawable/type_ground"
+					android:tag="unpressed"
+					tools:ignore="ContentDescription" />
+
+				<ImageButton
+					android:id="@+id/d_ice"
+					android:layout_width="48dp"
+					android:layout_height="48dp"
+					android:layout_margin="6dp"
+					android:background="@drawable/ui_button"
+					android:padding="4dp"
+					android:scaleType="fitCenter"
+					android:src="@drawable/type_ice"
+					android:tag="unpressed"
+					tools:ignore="ContentDescription" />
+
+				<ImageButton
+					android:id="@+id/d_normal"
+					android:layout_width="48dp"
+					android:layout_height="48dp"
+					android:layout_margin="6dp"
+					android:background="@drawable/ui_button"
+					android:padding="4dp"
+					android:scaleType="fitCenter"
+					android:src="@drawable/type_normal"
+					android:tag="unpressed"
+					tools:ignore="ContentDescription" />
+
+				<ImageButton
+					android:id="@+id/d_poison"
+					android:layout_width="48dp"
+					android:layout_height="48dp"
+					android:layout_margin="6dp"
+					android:background="@drawable/ui_button"
+					android:padding="4dp"
+					android:scaleType="fitCenter"
+					android:src="@drawable/type_poison"
+					android:tag="unpressed"
+					tools:ignore="ContentDescription" />
+
+				<ImageButton
+					android:id="@+id/d_psychic"
+					android:layout_width="48dp"
+					android:layout_height="48dp"
+					android:layout_margin="6dp"
+					android:background="@drawable/ui_button"
+					android:padding="4dp"
+					android:scaleType="fitCenter"
+					android:src="@drawable/type_psychic"
+					android:tag="unpressed"
+					tools:ignore="ContentDescription" />
+
+				<ImageButton
+					android:id="@+id/d_rock"
+					android:layout_width="48dp"
+					android:layout_height="48dp"
+					android:layout_margin="6dp"
+					android:background="@drawable/ui_button"
+					android:padding="4dp"
+					android:scaleType="fitCenter"
+					android:src="@drawable/type_rock"
+					android:tag="unpressed"
+					tools:ignore="ContentDescription" />
+
+				<ImageButton
+					android:id="@+id/d_steel"
+					android:layout_width="48dp"
+					android:layout_height="48dp"
+					android:layout_margin="6dp"
+					android:background="@drawable/ui_button"
+					android:padding="4dp"
+					android:scaleType="fitCenter"
+					android:src="@drawable/type_steel"
+					android:tag="unpressed"
+					tools:ignore="ContentDescription" />
+
+				<ImageButton
+					android:id="@+id/d_water"
+					android:layout_width="48dp"
+					android:layout_height="48dp"
+					android:layout_margin="6dp"
+					android:background="@drawable/ui_button"
+					android:padding="4dp"
+					android:scaleType="fitCenter"
+					android:src="@drawable/type_water"
+					android:tag="unpressed"
+					tools:ignore="ContentDescription" />
+
+			</GridLayout>
+
+			<Button
+				android:id="@+id/d_check"
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_marginHorizontal="64dp"
+				android:background="@drawable/ui_button"
+				android:text="CHECK"
+				android:textSize="24sp"
+				tools:ignore="HardcodedText" />
+		</LinearLayout>
+	</LinearLayout>
+</RelativeLayout>
