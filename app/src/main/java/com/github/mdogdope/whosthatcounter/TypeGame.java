@@ -17,25 +17,23 @@ import android.widget.TextView;
 import java.util.Random;
 import java.util.Vector;
 
-public class Offense extends AppCompatActivity {
-	
+public class TypeGame extends AppCompatActivity {
+
 	private final String[] types = {"bug","dark","dragon","electric","fairy","fighting","fire","flying","ghost","grass","ground","ice","normal","poison","psychic","rock","steel","water"};
 	private final int[] typeImages = {R.drawable.type_bug, R.drawable.type_dark, R.drawable.type_dragon, R.drawable.type_electric, R.drawable.type_fairy, R.drawable.type_fighting, R.drawable.type_fire, R.drawable.type_flying, R.drawable.type_ghost, R.drawable.type_grass, R.drawable.type_ground, R.drawable.type_ice, R.drawable.type_normal, R.drawable.type_poison, R.drawable.type_psychic, R.drawable.type_rock, R.drawable.type_steel, R.drawable.type_water};
 
-	private final Integer[] ids = {R.id.o_bug, R.id.o_dark, R.id.o_dragon, R.id.o_electric, R.id.o_fairy, R.id.o_fighting, R.id.o_fire, R.id.o_flying, R.id.o_ghost, R.id.o_grass, R.id.o_ground, R.id.o_ice, R.id.o_normal, R.id.o_poison, R.id.o_psychic, R.id.o_rock, R.id.o_steel, R.id.o_water};
-	
+	private final Integer[] ids = {R.id.tg_bug, R.id.tg_dark, R.id.tg_dragon, R.id.tg_electric, R.id.tg_fairy, R.id.tg_fighting, R.id.tg_fire, R.id.tg_flying, R.id.tg_ghost, R.id.tg_grass, R.id.tg_ground, R.id.tg_ice, R.id.tg_normal, R.id.tg_poison, R.id.tg_psychic, R.id.tg_rock, R.id.tg_steel, R.id.tg_water};
+
 	private Vector<Integer> mixedQs = new Vector<>();
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_offense);
-		
-		setupGame();
+		setContentView(R.layout.activity_type_game);
 	}
-	
+
 	private void setupGame(){
-		PokeTypes question = new PokeTypes(setQuestion());
+		Counters question = new Counters(setQuestion());
 
 		Vector<ImageButton> typeButtons = new Vector<>();
 
@@ -48,12 +46,12 @@ public class Offense extends AppCompatActivity {
 					buttonClick(view);
 				}
 			});
-			
+
 			if(temp.getTag().equals("pressed")){
 				temp.setTag("unpressed");
 				temp.setBackgroundResource(R.drawable.ui_button);
 			}
-			
+
 			typeButtons.add(temp);
 		}
 
@@ -61,14 +59,14 @@ public class Offense extends AppCompatActivity {
 		check.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				
+
 				Vector<Integer> correct = question.getWeakList();
 				Vector<Integer> ans = getAns(typeButtons);
-				
+
 				showResults(question, ans, correct);
 			}
 		});
-		
+
 		ImageButton back = findViewById(R.id.o_back);
 		back.setOnClickListener(new View.OnClickListener() {
 			@Override
@@ -76,9 +74,9 @@ public class Offense extends AppCompatActivity {
 				finish();
 			}
 		});
-		
+
 	}
-	
+
 	private Vector<Integer> getAns(Vector<ImageButton> btns){
 		Vector<Integer> ans = new Vector<>();
 		int counter = 0;
@@ -90,7 +88,7 @@ public class Offense extends AppCompatActivity {
 		}
 		return ans;
 	}
-	
+
 	private void buttonClick(View view){
 		if(view.getTag().equals("unpressed")){
 			view.setTag("pressed");
@@ -102,7 +100,7 @@ public class Offense extends AppCompatActivity {
 	}
 
 	private int setQuestion(){
-		
+
 		TextView questionText = findViewById(R.id.o_name);
 		ImageView questionIcon = findViewById(R.id.o_icon);
 
@@ -126,33 +124,33 @@ public class Offense extends AppCompatActivity {
 		questionIcon.setImageResource(typeImages[qNum]);
 		return qNum;
 	}
-	
+
 	private String capitalize(String s){
 		//Simply capitalizes the first letter in a given string.
 		return s.substring(0,1).toUpperCase() + s.substring(1);
 	}
-	
-	
-	
-	private void showResults(PokeTypes q, Vector<Integer> answers, Vector<Integer> correct){
-		final Dialog resultsDialog = new Dialog(Offense.this, android.R.style.Theme_Black_NoTitleBar);
+
+
+
+	private void showResults(Counters q, Vector<Integer> answers, Vector<Integer> correct){
+		final Dialog resultsDialog = new Dialog(TypeGame.this, android.R.style.Theme_Black_NoTitleBar);
 		resultsDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.argb(119,0,0,0)));
 		resultsDialog.setCancelable(true);
 		resultsDialog.setContentView(R.layout.fragment_game_results);
-		
-		
+
+
 		TextView score = resultsDialog.findViewById(R.id.gr_score);
 		TextView question = resultsDialog.findViewById(R.id.gr_type);
 		LinearLayout ans = resultsDialog.findViewById(R.id.gr_counters);
-		
+
 		ImageButton menu = resultsDialog.findViewById(R.id.gr_menu);
 		Button again = resultsDialog.findViewById(R.id.gr_again);
-		
+
 		question.setText(capitalize(q.getTypeString()));
-		
+
 		boolean good = false;
 		boolean bad = false;
-		
+
 		for(int i = 0; i < types.length; i++){
 			TextView temp = new TextView(this);
 			if(answers.contains(i) && correct.contains(i)){
@@ -181,7 +179,7 @@ public class Offense extends AppCompatActivity {
 		}else{
 			score.setText("Wrong");
 		}
-		
+
 		menu.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
@@ -189,7 +187,7 @@ public class Offense extends AppCompatActivity {
 				finish();
 			}
 		});
-		
+
 		again.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
@@ -197,8 +195,7 @@ public class Offense extends AppCompatActivity {
 				setupGame();
 			}
 		});
-		
+
 		resultsDialog.show();
 	}
-
 }

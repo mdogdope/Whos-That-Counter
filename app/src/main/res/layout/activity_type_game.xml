@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout 
+	xmlns:android="http://schemas.android.com/apk/res/android"
 	xmlns:app="http://schemas.android.com/apk/res-auto"
 	xmlns:tools="http://schemas.android.com/tools"
 	android:layout_width="match_parent"
 	android:layout_height="match_parent"
 	android:background="@color/background"
 	android:orientation="vertical"
-	tools:context=".Offense">
-	
+	tools:context=".TypeGame">
+
 	<ImageButton
-		android:id="@+id/o_back"
+		android:id="@+id/tg_back"
 		android:layout_width="90dp"
 		android:layout_height="64dp"
 		android:layout_margin="16dp"
@@ -33,7 +34,7 @@
 			tools:ignore="UseCompoundDrawables">
 
 			<ImageView
-				android:id="@+id/o_icon"
+				android:id="@+id/tg_icon"
 				android:layout_width="195dp"
 				android:layout_height="195dp"
 				android:src="@drawable/type_bug"
@@ -49,7 +50,7 @@
 				android:padding="8dp">
 
 				<TextView
-					android:id="@+id/o_name"
+					android:id="@+id/tg_name"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:text="BUG"
@@ -58,7 +59,7 @@
 					tools:ignore="HardcodedText" />
 
 				<TextView
-					android:id="@+id/o_mode"
+					android:id="@+id/tg_mode"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
 					android:text="is weak to"
@@ -83,7 +84,7 @@
 				android:rowCount="3">
 
 				<ImageButton
-					android:id="@+id/o_bug"
+					android:id="@+id/tg_bug"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="6dp"
@@ -95,7 +96,7 @@
 					tools:ignore="ContentDescription" />
 
 				<ImageButton
-					android:id="@+id/o_dark"
+					android:id="@+id/tg_dark"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="6dp"
@@ -107,7 +108,7 @@
 					tools:ignore="ContentDescription" />
 
 				<ImageButton
-					android:id="@+id/o_dragon"
+					android:id="@+id/tg_dragon"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="6dp"
@@ -119,7 +120,7 @@
 					tools:ignore="ContentDescription" />
 
 				<ImageButton
-					android:id="@+id/o_electric"
+					android:id="@+id/tg_electric"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="6dp"
@@ -131,7 +132,7 @@
 					tools:ignore="ContentDescription" />
 
 				<ImageButton
-					android:id="@+id/o_fairy"
+					android:id="@+id/tg_fairy"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="6dp"
@@ -143,7 +144,7 @@
 					tools:ignore="ContentDescription" />
 
 				<ImageButton
-					android:id="@+id/o_fighting"
+					android:id="@+id/tg_fighting"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="6dp"
@@ -155,7 +156,7 @@
 					tools:ignore="ContentDescription" />
 
 				<ImageButton
-					android:id="@+id/o_fire"
+					android:id="@+id/tg_fire"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="6dp"
@@ -167,7 +168,7 @@
 					tools:ignore="ContentDescription" />
 
 				<ImageButton
-					android:id="@+id/o_flying"
+					android:id="@+id/tg_flying"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="6dp"
@@ -179,7 +180,7 @@
 					tools:ignore="ContentDescription" />
 
 				<ImageButton
-					android:id="@+id/o_ghost"
+					android:id="@+id/tg_ghost"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="6dp"
@@ -191,7 +192,7 @@
 					tools:ignore="ContentDescription" />
 
 				<ImageButton
-					android:id="@+id/o_grass"
+					android:id="@+id/tg_grass"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="6dp"
@@ -203,7 +204,7 @@
 					tools:ignore="ContentDescription" />
 
 				<ImageButton
-					android:id="@+id/o_ground"
+					android:id="@+id/tg_ground"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="6dp"
@@ -215,7 +216,7 @@
 					tools:ignore="ContentDescription" />
 
 				<ImageButton
-					android:id="@+id/o_ice"
+					android:id="@+id/tg_ice"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="6dp"
@@ -227,7 +228,7 @@
 					tools:ignore="ContentDescription" />
 
 				<ImageButton
-					android:id="@+id/o_normal"
+					android:id="@+id/tg_normal"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="6dp"
@@ -239,7 +240,7 @@
 					tools:ignore="ContentDescription" />
 
 				<ImageButton
-					android:id="@+id/o_poison"
+					android:id="@+id/tg_poison"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="6dp"
@@ -251,7 +252,7 @@
 					tools:ignore="ContentDescription" />
 
 				<ImageButton
-					android:id="@+id/o_psychic"
+					android:id="@+id/tg_psychic"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="6dp"
@@ -263,7 +264,7 @@
 					tools:ignore="ContentDescription" />
 
 				<ImageButton
-					android:id="@+id/o_rock"
+					android:id="@+id/tg_rock"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="6dp"
@@ -275,7 +276,7 @@
 					tools:ignore="ContentDescription" />
 
 				<ImageButton
-					android:id="@+id/o_steel"
+					android:id="@+id/tg_steel"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="6dp"
@@ -287,7 +288,7 @@
 					tools:ignore="ContentDescription" />
 
 				<ImageButton
-					android:id="@+id/o_water"
+					android:id="@+id/tg_water"
 					android:layout_width="48dp"
 					android:layout_height="48dp"
 					android:layout_margin="6dp"
@@ -301,7 +302,7 @@
 			</GridLayout>
 
 			<Button
-				android:id="@+id/o_check"
+				android:id="@+id/tg_check"
 				android:layout_width="match_parent"
 				android:layout_height="wrap_content"
 				android:layout_marginHorizontal="64dp"
@@ -311,5 +312,4 @@
 				tools:ignore="HardcodedText" />
 		</LinearLayout>
 	</LinearLayout>
-	
 </RelativeLayout>

@@ -12,6 +12,9 @@
 		android:supportsRtl="false"
 		android:theme="@style/Theme.AppCompat.Light.NoActionBar">
 		<activity
+			android:name=".TypeGame"
+			android:exported="false" />
+		<activity
 			android:name=".Defense"
 			android:configChanges="orientation|keyboardHidden"
 			android:exported="false"
