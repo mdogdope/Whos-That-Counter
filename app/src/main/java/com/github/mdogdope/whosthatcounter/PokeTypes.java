@@ -48,67 +48,90 @@ public class PokeTypes {
 			{0,0,0,-1,1,0,-1,0,0,0,0,1,0,0,0,1,-1,-1},
 			{0,0,-1,0,0,0,1,0,0,-1,1,0,0,0,0,1,0,-1}
 	};
-
+	
+	private final int TYPE_COUNT = types.length;
+	
 	private int subject = 0;
 
 	private Vector<Integer> mixedSubjectList = new Vector<>();
 
 	public PokeTypes(){
+		generateMixedList();
+	}
+	
+	public Integer nextSubject(){
+		if(!this.mixedSubjectList.isEmpty()){
+			generateMixedList();
+		}
+		this.subject = this.mixedSubjectList.elementAt(0);
+		this.mixedSubjectList.removeElementAt(0);
+		return this.subject;
+	}
+	
+	public boolean setSubject(int subject){
+		if(subject <= this.TYPE_COUNT && subject >= 0){
+			this.subject = subject;
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
+	public Integer getSubject(){
+		return this.subject;
+	}
+	
+	public boolean checkWeak(Vector<Integer> ans){
+		boolean ret = false;
+		Vector<Integer> correct = generateWeak();
+		if(ans.containsAll(correct) && ans.size() == correct.size()){
+			ret = true;
+		}
+		return ret;
+	}
+
+	public boolean checkStrong(Vector<Integer> ans){
+		boolean ret = false;
+		Vector<Integer> correct = generateStrong();
+		if(ans.containsAll(correct) && ans.size() == correct.size()){
+			ret = true;
+		}
+		return ret;
+	}
+	
+	public Vector<Integer> generateWeak(){
+		Vector<Integer> ret = new Vector<>();
+		for(int i = 0; i < this.TYPE_COUNT; i++){
+			int test = this.counters[i][this.subject];
+			if(test > 0){
+				ret.add(test);
+			}
+		}
+		return ret;
+	}
+
+	public Vector<Integer> generateStrong(){
+		Vector<Integer> ret = new Vector<>();
+		for(int i = 0; i < this.TYPE_COUNT; i++){
+			int test = this.counters[i][this.subject];
+			if(test < 0){
+				ret.add(test);
+			}
+		}
+		return ret;
+	}
+	
+	private void generateMixedList(){
 		Vector<Integer> baseSubjectList = new Vector<>();
-		for(int i = 0; i < types.length; i++){
+		for(int i = 0; i < this.TYPE_COUNT; i++){
 			baseSubjectList.add(i);
 		}
 		Random rng = new Random();
 		while(!baseSubjectList.isEmpty()){
-			int loc = rng.nextInt(types.length);
+			int loc = rng.nextInt(baseSubjectList.size());
 			this.mixedSubjectList.add(baseSubjectList.elementAt(loc));
 			baseSubjectList.remove(loc);
 		}
-	}
-
-	public int effectiveness(int typeId){
-
-		return counters[this.subject][typeId];
-	}
-
-	public void setSubject(int typeId){
-		this.subject = typeId;
-	}
-
-	public String getTypeString(){
-		return types[this.subject];
-	}
-
-	public int getSubject(){
-		return this.subject;
-	}
-
-	public Vector<Integer> getWeakList(){
-		Vector<Integer> ret = new Vector<>();
-
-		int id = this.subject;
-		int counter = 0;
-		for(int ia = 0; ia < counters.length; ia++){
-			if(counters[ia][id] > 0){
-				ret.add(counter);
-			}
-			counter++;
-		}
-		return ret;
-	}
-
-	public Vector<Integer> getStringList(){
-		Vector<Integer> ret = new Vector<>();
-
-		int ia = this.subject;
-		int counter = 0;
-		for(int id = 0; id < counters.length; id++){
-			if(counters[ia][id] < 0){
-				ret.add(counter);
-			}
-			counter++;
-		}
-		return ret;
 	}
 }
 
