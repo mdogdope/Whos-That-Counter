@@ -62,7 +62,7 @@
 					android:id="@+id/tg_mode"
 					android:layout_width="wrap_content"
 					android:layout_height="wrap_content"
-					android:text="is weak to"
+					android:text="is weak/resistant to"
 					android:textColor="@color/black"
 					android:textSize="24sp"
 					tools:ignore="HardcodedText" />

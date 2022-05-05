@@ -20,8 +20,9 @@ public class MainMenu extends AppCompatActivity {
 		offense.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View view) {
-				Intent intent = new Intent(MainMenu.this, Offense.class);
-				startActivity(intent);
+				Intent i = new Intent(MainMenu.this, Offense.class);
+				i.putExtra("mode", "offense");
+				startActivity(i);
 			}
 		});
 		
@@ -30,6 +31,7 @@ public class MainMenu extends AppCompatActivity {
 			@Override
 			public void onClick(View view) {
 				Intent i = new Intent(MainMenu.this, Defense.class);
+				i.putExtra("mode", "defense");
 				startActivity(i);
 			}
 		});

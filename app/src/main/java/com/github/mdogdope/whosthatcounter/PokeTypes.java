@@ -4,7 +4,7 @@ import java.util.Random;
 import java.util.Vector;
 
 public class PokeTypes {
-
+	
 	public final int BUG = 0;
 	public final int DARK = 1;
 	public final int DRAGON = 2;
@@ -81,6 +81,10 @@ public class PokeTypes {
 		return this.subject;
 	}
 	
+	public String getSubjectString(){
+		return types[this.subject];
+	}
+	
 	public boolean checkWeak(Vector<Integer> ans){
 		boolean ret = false;
 		Vector<Integer> correct = generateWeak();
@@ -95,6 +99,36 @@ public class PokeTypes {
 		Vector<Integer> correct = generateStrong();
 		if(ans.containsAll(correct) && ans.size() == correct.size()){
 			ret = true;
+		}
+		return ret;
+	}
+	
+	public Vector<Integer> getCorrect(Vector<Integer> ans, Vector<Integer> correct){
+		Vector<Integer> ret = new Vector<>();
+		for(int i = 0; i < types.length; i++){
+			if(ans.contains(i) && correct.contains(i)){
+				ret.add(i);
+			}
+		}
+		return ret;
+	}
+
+	public Vector<Integer> getWrong(Vector<Integer> ans, Vector<Integer> correct){
+		Vector<Integer> ret = new Vector<>();
+		for(int i = 0; i < types.length; i++){
+			if(ans.contains(i) && !correct.contains(i)){
+				ret.add(i);
+			}
+		}
+		return ret;
+	}
+
+	public Vector<Integer> getMissing(Vector<Integer> ans, Vector<Integer> correct){
+		Vector<Integer> ret = new Vector<>();
+		for(int i = 0; i < types.length; i++){
+			if(!ans.contains(i) && correct.contains(i)){
+				ret.add(i);
+			}
 		}
 		return ret;
 	}

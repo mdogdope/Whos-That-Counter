@@ -35,7 +35,7 @@ public class Defense extends AppCompatActivity {
 	}
 
 	private void setupGame(){
-		PokeTypes question = new PokeTypes(setQuestion());
+		Counters question = new Counters(setQuestion());
 
 		Vector<ImageButton> typeButtons = new Vector<>();
 
@@ -132,7 +132,7 @@ public class Defense extends AppCompatActivity {
 
 
 
-	private void showResults(PokeTypes q, Vector<Integer> answers, Vector<Integer> correct){
+	private void showResults(Counters q, Vector<Integer> answers, Vector<Integer> correct){
 		final Dialog resultsDialog = new Dialog(Defense.this, android.R.style.Theme_Black_NoTitleBar);
 		resultsDialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.argb(119,0,0,0)));
 		resultsDialog.setCancelable(true);
